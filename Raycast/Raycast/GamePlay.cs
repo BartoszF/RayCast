@@ -34,8 +34,6 @@ namespace Raycast
 
         Color darker = new Color(140, 140, 140);
 
-        Random rand;
-
         public GamePlay(GraphicsDevice gd)
         {
             this.wallTex = new Texture2D(gd,2, 2);
@@ -43,8 +41,6 @@ namespace Raycast
 
             whiteTex = new Texture2D(gd, 1, 1);
             whiteTex.SetData<Color>(new Color[] { new Color(255, 255, 255) });
-
-            rand = new Random();
         }
 
 
@@ -62,6 +58,7 @@ namespace Raycast
             }
             if (ks.IsKeyDown(Keys.Up)) move(3 * (float)gameTime.ElapsedGameTime.Milliseconds / 1000);
             if (ks.IsKeyDown(Keys.Down)) move(-3 * (float)gameTime.ElapsedGameTime.Milliseconds / 1000);
+
         }
 
         private void Rotate(float rotSpeed)
@@ -143,7 +140,7 @@ namespace Raycast
                         side = 1;
                     }
                     //Check if ray has hit a wall
-                    if (map[mapX,mapY] > 0) hit = 1;
+                    if (map[mapX, mapY] > 0) hit = 1;
                 }
 
                 if (side == 0) perpWallDist = (mapX - rayPosX + (1 - stepX) / 2) / rayDirX;
@@ -158,17 +155,6 @@ namespace Raycast
                 int drawEnd = lineHeight / 2 + h / 2;
                 if (drawEnd >= h) drawEnd = h - 1;
 
-                /*Color color;
-                switch (map[mapX,mapY])
-                {
-                    case 1: color = Color.Blue; break; //red
-                    case 2: color = Color.Green; break; //green
-                    case 3: color = Color.Red; break; //blue
-                    case 4: color = Color.White; break; //white
-                    default: color = Color.Yellow; break; //yellow
-                }*/
-
-                //calculate value of wallX
                 float wallX; //where exactly the wall was hit
                 if (side == 0) wallX = rayPosY + perpWallDist * rayDirY;
                 else wallX = rayPosX + perpWallDist * rayDirX;
@@ -179,10 +165,7 @@ namespace Raycast
                 if (side == 0 && rayDirX > 0) texX = wallTex.Width - texX - 1;
                 if (side == 1 && rayDirY < 0) texX = wallTex.Width - texX - 1;
 
-                //give x and y sides different brightness
-                //if (side == 1) { color = new Color(color.R/2, color.G/2,color.B/2); }
-
-                sb.Draw(wallTex, new Rectangle(x, drawStart, 1, drawEnd-drawStart),new Rectangle(texX,0,1,wallTex.Height), side==0?Color.White:darker);
+                sb.Draw(wallTex, new Rectangle(x, drawStart, 1, drawEnd - drawStart), new Rectangle(texX, 0, 1, wallTex.Height), side == 0 ? Color.White : new Color(200, 200, 200));
             }
         }
 
@@ -191,7 +174,5 @@ namespace Raycast
             if (map[(int)(playerPos.X + dirX * dist),(int)playerPos.Y] == 0) playerPos.X += dirX * dist;
             if (map[(int)playerPos.X,(int)(playerPos.Y + dirY * dist)] == 0) playerPos.Y += dirY * dist;
         }
-
-
     }
 }

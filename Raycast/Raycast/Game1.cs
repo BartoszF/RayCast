@@ -101,7 +101,7 @@ namespace Raycast
         {
             GraphicsDevice.SetRenderTarget(target);
 
-            GraphicsDevice.Clear(Color.White);
+            GraphicsDevice.Clear(Color.Black);
 
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.NonPremultiplied, SamplerState.PointWrap, DepthStencilState.None, RasterizerState.CullNone);
             gp.Draw(spriteBatch, 64, 64);
@@ -109,7 +109,7 @@ namespace Raycast
 
             GraphicsDevice.SetRenderTarget(null);
 
-            GraphicsDevice.Clear(Color.White);
+            GraphicsDevice.Clear(Color.Black);
 
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.NonPremultiplied, SamplerState.PointWrap, DepthStencilState.None, RasterizerState.CullNone);
 

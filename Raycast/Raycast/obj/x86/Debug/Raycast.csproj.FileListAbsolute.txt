@@ -1,0 +1,16 @@
+C:\Users\Kebab\Documents\RayCast\Raycast\Raycast\obj\x86\Debug\Raycast.csprojResolveAssemblyReference.cache
+C:\Users\Kebab\Documents\RayCast\Raycast\Raycast\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Kebab\Documents\RayCast\Raycast\Raycast\bin\x86\Debug\Raycast.exe
+C:\Users\Kebab\Documents\RayCast\Raycast\Raycast\bin\x86\Debug\Raycast.pdb
+C:\Users\Kebab\Documents\RayCast\Raycast\Raycast\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\Kebab\Documents\RayCast\Raycast\Raycast\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\Kebab\Documents\RayCast\Raycast\Raycast\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\Kebab\Documents\RayCast\Raycast\Raycast\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\Kebab\Documents\RayCast\Raycast\Raycast\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\Kebab\Documents\RayCast\Raycast\Raycast\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\Kebab\Documents\RayCast\Raycast\Raycast\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\Kebab\Documents\RayCast\Raycast\Raycast\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\Kebab\Documents\RayCast\Raycast\Raycast\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\Kebab\Documents\RayCast\Raycast\Raycast\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\Kebab\Documents\RayCast\Raycast\Raycast\obj\x86\Debug\Raycast.exe
+C:\Users\Kebab\Documents\RayCast\Raycast\Raycast\obj\x86\Debug\Raycast.pdb

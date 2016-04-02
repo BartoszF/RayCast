@@ -19,10 +19,19 @@ namespace Raycast
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        GamePlay gp;
+
+        RenderTarget2D target;
+
+        public static int Width, Height;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            graphics.PreferredBackBufferWidth = 512;
+            graphics.PreferredBackBufferHeight = 512;
         }
 
         /// <summary>
@@ -47,6 +56,13 @@ namespace Raycast
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            target = new RenderTarget2D(GraphicsDevice, 64, 64);
+
+            Width = graphics.PreferredBackBufferWidth;
+            Height = graphics.PreferredBackBufferHeight;
+
+            gp = new GamePlay(GraphicsDevice);
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -70,6 +86,8 @@ namespace Raycast
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
+            gp.Update(gameTime);
+
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -81,7 +99,23 @@ namespace Raycast
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.SetRenderTarget(target);
+
+            GraphicsDevice.Clear(Color.White);
+
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.NonPremultiplied, SamplerState.PointWrap, DepthStencilState.None, RasterizerState.CullNone);
+            gp.Draw(spriteBatch, 64, 64);
+            spriteBatch.End();
+
+            GraphicsDevice.SetRenderTarget(null);
+
+            GraphicsDevice.Clear(Color.White);
+
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.NonPremultiplied, SamplerState.PointWrap, DepthStencilState.None, RasterizerState.CullNone);
+
+            spriteBatch.Draw((Texture2D)target, new Rectangle(0, 0, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight), Color.White)
+;
+            spriteBatch.End();
 
             // TODO: Add your drawing code here
 
